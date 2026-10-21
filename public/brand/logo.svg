@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 72" fill="none">
+  <path fill="#086B43" d="M8 40.5 36 14l28 26.5h-8.4V62H16.4V40.5H8Z"/>
+  <path fill="#F7FAF7" d="M30.2 62V46.6h11.6V62H30.2Z"/>
+  <path fill="#A7D129" d="M36 17.4c9.6 4.2 17.8 13.6 14.8 25.6-6.8-3.4-11.4-11-14.8-25.6Z"/>
+  <path d="M37.6 21.2c2.8 6.6 4.4 12.2 4.6 18" stroke="#064E3B" stroke-width="1.7" stroke-linecap="round"/>
+  <text x="78" y="38" fill="#064E3B" font-family="Manrope, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="0.5">VAISHNAVI</text>
+  <text x="78" y="58" fill="#086B43" font-family="Manrope, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="2.4">PEST CONTROL</text>
+</svg>
