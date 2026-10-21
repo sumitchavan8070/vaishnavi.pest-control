@@ -6,7 +6,7 @@ import { ServiceCard } from "@/components/services/ServiceCard";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { ButtonLink } from "@/components/ui/Button";
 import { categories, getCategory, getServicesByCategory } from "@/lib/services";
-import { pageMetadata } from "@/lib/seo";
+import { categorySearchTerms, pageMetadata } from "@/lib/seo";
 import type { CategorySlug } from "@/lib/types";
 
 const titles: Record<CategorySlug, string> = {
@@ -32,7 +32,8 @@ export async function generateMetadata({
   const { category: slug } = await params;
   const category = getCategory(slug);
   if (!category) return {};
-  return pageMetadata(titles[category.slug], category.summary, `/services/${category.slug}`);
+  const search = categorySearchTerms[category.slug];
+  return pageMetadata(titles[category.slug], search.description, `/services/${category.slug}`, search.keywords);
 }
 
 export default async function CategoryPage({ params }: { params: Promise<{ category: string }> }) {

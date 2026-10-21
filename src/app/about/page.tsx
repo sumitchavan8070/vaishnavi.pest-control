@@ -6,8 +6,8 @@ import { otherPublishedServices } from "@/lib/services";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata(
-  "About Vaishnavi Pest Control",
-  "Vaishnavi Pest Control is a Pune pest control business serving homes and commercial spaces, with a published address in Kothrud.",
+  "Pest Control Company in Pune",
+  "Vaishnavi Pest Control serves homes, apartments, and shops in Pune. The published address is in Kothrud, and the catalogue lists Kasba Peth.",
   "/about",
 );
 

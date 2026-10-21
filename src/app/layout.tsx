@@ -5,6 +5,8 @@ import { Header } from "@/components/layout/Header";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { business } from "@/lib/business";
+import { punePestKeywords, punePlaces } from "@/lib/seo";
+import { categories } from "@/lib/services";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -20,24 +22,32 @@ export const metadata: Metadata = {
     template: "%s | Vaishnavi Pest Control",
   },
   description:
-    "Professional pest control for kitchens, apartments, independent houses, and commercial spaces in Pune. Compare starting prices and send an enquiry.",
+    "Pest control in Pune for cockroaches, bed bugs, rats, kitchens, apartments, bungalows, and shops. Starting prices from Vaishnavi Pest Control, Kothrud.",
+  keywords: punePestKeywords,
   applicationName: "Vaishnavi Pest Control",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "en_IN",
     siteName: "Vaishnavi Pest Control",
+    title: "Pest Control Services in Pune | Vaishnavi Pest Control",
+    description:
+      "Pest control in Pune for cockroaches, bed bugs, rats, kitchens, apartments, bungalows, and shops. Starting prices from Vaishnavi Pest Control, Kothrud.",
     images: [
       {
-        url: "/images/hero-living.jpg",
-        width: 1800,
-        height: 1350,
-        alt: "Sunlit living room with a sofa, armchairs, and houseplants",
+        url: "/images/Family Comfort with Pest Control Care.png",
+        width: 1536,
+        height: 1024,
+        alt: "A family and their dog on a living-room sofa",
       },
     ],
   },
   twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true },
+  other: {
+    "geo.region": "IN-MH",
+    "geo.placename": "Pune",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -56,9 +66,17 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       postalCode: business.publishedAddress.postalCode,
       addressCountry: "IN",
     },
-    areaServed: {
-      "@type": "City",
-      name: "Pune",
+    areaServed: punePlaces(),
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Pest control services in Pune",
+      itemListElement: categories.map((category) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: `${category.shortName} pest control in Pune`,
+        },
+      })),
     },
     sameAs: [business.facebook],
   };

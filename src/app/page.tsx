@@ -18,7 +18,7 @@ import { ReviewList } from "@/components/reviews/ReviewList";
 import { Accordion } from "@/components/ui/Accordion";
 import { ButtonLink } from "@/components/ui/Button";
 import { StarRating } from "@/components/ui/StarRating";
-import { business, pestIssues, propertyTypes } from "@/lib/business";
+import { business, pestIssues, propertyTypes, puneLocalities } from "@/lib/business";
 import { faqs } from "@/lib/faqs";
 import { services } from "@/lib/services";
 
@@ -237,6 +237,30 @@ export default function HomePage() {
             <ServiceCard key={service.id} service={service} />
           ))}
         </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-8 md:px-6">
+        <div className="max-w-2xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-forest">Pune</p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-deep md:text-4xl">Pest control across Pune</h2>
+          <p className="mt-3 text-base leading-7 text-charcoal/75">
+            Enquiries are taken for kitchens, apartments, bungalows, and shops across Pune. The published address is in Kothrud, and the catalogue also lists Kasba Peth. Choose your locality and the team confirms the visit.
+          </p>
+        </div>
+        <ul className="mt-6 flex flex-wrap gap-2">
+          {puneLocalities
+            .filter((name) => name !== "Other")
+            .map((name) => (
+              <li key={name}>
+                <Link
+                  href={`/book?locality=${encodeURIComponent(name)}`}
+                  className="inline-flex rounded-full border border-line bg-white px-3 py-1.5 text-sm font-medium text-deep hover:border-forest"
+                >
+                  Pest control in {name}
+                </Link>
+              </li>
+            ))}
+        </ul>
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-8 md:px-6">

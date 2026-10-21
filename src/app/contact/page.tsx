@@ -6,8 +6,8 @@ import { pageMetadata } from "@/lib/seo";
 import { whatsAppHref } from "@/lib/whatsapp";
 
 export const metadata: Metadata = pageMetadata(
-  "Contact Vaishnavi Pest Control",
-  "Call, WhatsApp, or send an enquiry to Vaishnavi Pest Control in Pune. The published address is in Kothrud.",
+  "Contact Pest Control in Pune",
+  "Call or WhatsApp Vaishnavi Pest Control in Pune. Published address: Plot No. 74, Karve Road, Kothrud, Pune 411052. Kasba Peth is also listed.",
   "/contact",
 );
 

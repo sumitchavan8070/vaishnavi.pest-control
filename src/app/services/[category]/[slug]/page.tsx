@@ -11,7 +11,7 @@ import { StarRating } from "@/components/ui/StarRating";
 import { business } from "@/lib/business";
 import { formatDuration, formatInr } from "@/lib/format";
 import { getCategory, getRelatedServices, getService, services } from "@/lib/services";
-import { pageMetadata } from "@/lib/seo";
+import { categorySearchTerms, pageMetadata } from "@/lib/seo";
 import { whatsAppHref } from "@/lib/whatsapp";
 
 export const dynamicParams = false;
@@ -28,10 +28,12 @@ export async function generateMetadata({
   const { category, slug } = await params;
   const service = getService(category, slug);
   if (!service) return {};
+  const search = categorySearchTerms[service.category];
   return pageMetadata(
     `${service.name} in Pune`,
-    `${service.description} Starting at ${formatInr(service.startingPrice)}. Estimated duration ${formatDuration(service.durationMinutes)}.`,
+    `${service.name} in Pune. ${service.description} Starting at ${formatInr(service.startingPrice)}. Visit time ${formatDuration(service.durationMinutes)}.`,
     `/services/${service.category}/${service.slug}`,
+    [service.name, `${service.name} in Pune`, ...search.keywords],
   );
 }
 

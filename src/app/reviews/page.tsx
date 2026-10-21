@@ -7,8 +7,8 @@ import { business } from "@/lib/business";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata(
-  "Customer Reviews",
-  "Written reviews published by Vaishnavi Pest Control, shown separately from the supplied 4.7 overall rating.",
+  "Pest Control Reviews in Pune",
+  "Customer reviews published by Vaishnavi Pest Control in Pune, shown separately from the supplied 4.7 rating from 10,244 reviews.",
   "/reviews",
 );
 

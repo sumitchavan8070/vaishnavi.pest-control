@@ -4,8 +4,8 @@ import { business } from "@/lib/business";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata(
-  "Enquire About a Service",
-  "Request pest control in Pune. Choose a service, property, locality, and preferred time. The request is not a confirmed booking.",
+  "Book Pest Control in Pune",
+  "Book pest control in Pune. Choose a service, a Pune locality, and a preferred time. The request is not a confirmed booking until the team accepts it.",
   "/book",
 );
 

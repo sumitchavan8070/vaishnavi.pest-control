@@ -9,7 +9,7 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata(
   "Pest Control Services in Pune",
-  "Compare kitchen, apartment, bungalow, cockroach, bed bug, rodent, and commercial pest control in Pune, with starting prices and visit times.",
+  "Compare pest control in Pune: kitchen, bathroom, apartment, bungalow, cockroach, bed bug, rat, and office or shop treatment, with starting prices.",
   "/services",
 );
 
